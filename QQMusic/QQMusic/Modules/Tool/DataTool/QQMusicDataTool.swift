@@ -25,7 +25,7 @@ class QQMusicDataTool: NSObject {
         var resultMs = [QQMusicModel]()
         for dic in dictArray {
             
-            let musicM = QQMusicModel(dict: dic as! [String : Any])
+            let musicM = QQMusicModel(dict: dic as! [String : String])
             resultMs.append(musicM)
             
         }

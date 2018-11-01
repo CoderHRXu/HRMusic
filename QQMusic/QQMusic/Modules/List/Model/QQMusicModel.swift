@@ -8,7 +8,9 @@
 
 import UIKit
 
-class QQMusicModel: NSObject {
+// https://www.jianshu.com/p/b2fda7e64e57
+
+@objcMembers class QQMusicModel: NSObject {
 
     /** 歌曲名称 */
     var name: String?
@@ -29,7 +31,7 @@ class QQMusicModel: NSObject {
     var icon: String?
     
     
-    init(dict : [String : Any]) {
+    init(dict : [String : String]) {
         super.init()
         setValuesForKeys(dict)
     }
