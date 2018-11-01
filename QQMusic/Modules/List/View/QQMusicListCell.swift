@@ -41,10 +41,10 @@ class QQMusicListCell: UITableViewCell {
     /// 返回QQMusicListCell
     class func cellWithTableView(tableView : UITableView) -> QQMusicListCell{
         
-        let ID : String = "listCell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: ID) as? QQMusicListCell
+        let ID : String         = "listCell"
+        var cell                = tableView.dequeueReusableCell(withIdentifier: ID) as? QQMusicListCell
         if cell == nil {
-            cell = Bundle.main.loadNibNamed("QQMusicListCell", owner: nil, options: nil)?.first  as? QQMusicListCell
+            cell                = Bundle.main.loadNibNamed("QQMusicListCell", owner: nil, options: nil)?.first  as? QQMusicListCell
         }
         return cell!
     }
@@ -56,17 +56,17 @@ class QQMusicListCell: UITableViewCell {
         case .Rotation:
             // 把已有layer的动画移除
             self.layer.removeAnimation(forKey: "rotation")
-            let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-            animation.values = [M_PI * 0.25, 0]
-            animation.duration = 0.5
+            let animation       = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+            animation.values    = [.pi * 0.25, 0]
+            animation.duration  = 0.5
             self.layer.add(animation, forKey: "rotation")
             
         case .Translation:
             
             self.layer.removeAnimation(forKey: "translation")
-            let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-            animation.values = [60, 0]
-            animation.duration = 0.5
+            let animation       = CAKeyframeAnimation(keyPath: "transform.translation.x")
+            animation.values    = [60, 0]
+            animation.duration  = 0.5
             self.layer.add(animation, forKey: "translation")
         }
         

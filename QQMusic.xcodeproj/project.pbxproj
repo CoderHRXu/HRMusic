@@ -164,10 +164,10 @@
 		ADCA60D1218AE42300E70422 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				ADCA6138218AE81300E70422 /* Category */,
 				ADCA6130218AE74400E70422 /* List */,
 				ADCA6134218AE7C600E70422 /* Detail */,
 				ADCA612F218AE6FA00E70422 /* Tool */,
+				ADCA6138218AE81300E70422 /* Category */,
 				ADCA60D2218AE42300E70422 /* ViewController.swift */,
 				ADCA60D5218AE48200E70422 /* Main.storyboard */,
 			);
@@ -612,8 +612,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5BDQF9LPZ9;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/QQMusic/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -621,6 +621,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.haoran.QQMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -631,8 +632,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5BDQF9LPZ9;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/QQMusic/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -640,6 +641,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.haoran.QQMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
