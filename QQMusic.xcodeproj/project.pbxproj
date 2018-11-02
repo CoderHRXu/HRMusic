@@ -61,6 +61,8 @@
 		ADCA616C218AF11A00E70422 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA616B218AF11A00E70422 /* MusicListViewController.swift */; };
 		ADCA616F218AF1D000E70422 /* QQMusicListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA616D218AF1CE00E70422 /* QQMusicListCell.swift */; };
 		ADCA6170218AF1D500E70422 /* QQMusicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCA616E218AF1CE00E70422 /* QQMusicListCell.xib */; };
+		ADCA6173218BE4CE00E70422 /* QQMusicTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA6172218BE4CE00E70422 /* QQMusicTool.swift */; };
+		ADCA6175218C245200E70422 /* NotificationCenter+QQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA6174218C245200E70422 /* NotificationCenter+QQ.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,8 @@
 		ADCA616B218AF11A00E70422 /* MusicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		ADCA616D218AF1CE00E70422 /* QQMusicListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QQMusicListCell.swift; sourceTree = "<group>"; };
 		ADCA616E218AF1CE00E70422 /* QQMusicListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QQMusicListCell.xib; sourceTree = "<group>"; };
+		ADCA6172218BE4CE00E70422 /* QQMusicTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QQMusicTool.swift; sourceTree = "<group>"; };
+		ADCA6174218C245200E70422 /* NotificationCenter+QQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+QQ.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +263,7 @@
 		ADCA612F218AE6FA00E70422 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				ADCA6171218BE4B100E70422 /* MusicTool */,
 				ADCA6166218AEE5F00E70422 /* DataTool */,
 			);
 			path = Tool;
@@ -335,6 +340,7 @@
 			children = (
 				ADCA613A218AE82600E70422 /* CALayer+sz.swift */,
 				ADCA6139218AE82600E70422 /* UIView+Extension.swift */,
+				ADCA6174218C245200E70422 /* NotificationCenter+QQ.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -345,6 +351,14 @@
 				ADCA6167218AEEAC00E70422 /* QQMusicDataTool.swift */,
 			);
 			path = DataTool;
+			sourceTree = "<group>";
+		};
+		ADCA6171218BE4B100E70422 /* MusicTool */ = {
+			isa = PBXGroup;
+			children = (
+				ADCA6172218BE4CE00E70422 /* QQMusicTool.swift */,
+			);
+			path = MusicTool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +483,8 @@
 				ADCA613C218AE82600E70422 /* CALayer+sz.swift in Sources */,
 				ADCA616A218AEF4300E70422 /* QQMusicModel.swift in Sources */,
 				ADCA6168218AEEAC00E70422 /* QQMusicDataTool.swift in Sources */,
+				ADCA6175218C245200E70422 /* NotificationCenter+QQ.swift in Sources */,
+				ADCA6173218BE4CE00E70422 /* QQMusicTool.swift in Sources */,
 				ADCA613B218AE82600E70422 /* UIView+Extension.swift in Sources */,
 				ADCA60D3218AE42300E70422 /* ViewController.swift in Sources */,
 				ADCA60C0218AE3B900E70422 /* AppDelegate.swift in Sources */,
