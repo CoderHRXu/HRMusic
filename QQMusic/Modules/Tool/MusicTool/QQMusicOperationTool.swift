@@ -17,5 +17,8 @@ class QQMusicOperationTool: NSObject {
     
     private var musicMessageModel = QQMusicMessageModel()
     
+//    func getNewMessageModel() -> QQMusicMessageModel {
+//        
+//    }
 }
 

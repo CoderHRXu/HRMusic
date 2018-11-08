@@ -88,4 +88,11 @@ extension MusicListViewController {
         
         cell.beginAnimation(type: .Translation)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let musicM = self.musicList[indexPath.row]
+        self.performSegue(withIdentifier: "ToDetail", sender: nil)
+        
+    }
 }

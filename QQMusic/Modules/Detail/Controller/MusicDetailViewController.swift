@@ -36,12 +36,36 @@ class MusicDetailViewController: UIViewController {
     /// 歌词显示框 n
     @IBOutlet weak var lrcLabel: UILabel!
     
+    var timer : Timer?
+    
+    var displayLink :CADisplayLink?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    /// 返回列表界面
+    @IBAction func close(sender: AnyObject) {
+        navigationController?.popViewController(animated: true)
+    }
+
+    /// 下一首按钮点击
+    @IBAction func nextSong() {
+//        QQMusicOperationTool.shareInstance.nextSong()
+//        setupDataOnce()
+    }
+
 
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -51,11 +75,83 @@ class MusicDetailViewController: UIViewController {
 
 }
 
+// MARK: - UI
+extension MusicDetailViewController{
+    
+    func setupOnce() {
+        setUpSlider()
+//        setupLrcView()
+        
+    }
+    
+    func setupFrame() {
+        
+    }
+    
+    /// 设置进度条
+    func setUpSlider() {
+        
+        slider.setThumbImage(UIImage.init(named: "player_slider_playback_thumb"), for: .normal)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(touchSlider))
+        tap.delegate = self as UIGestureRecognizerDelegate
+        slider.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func touchSlider() {
+        print("点击进度条")
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+}
+
+extension  MusicDetailViewController: UIGestureRecognizerDelegate{
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        
+        return true
+    }
+}
+
+// MARK: - 动画
+extension MusicDetailViewController : UIScrollViewDelegate{
+    
+    func addRotationAnimation() {
+        
+        // 1.移除之前的动画
+        foreImageView.layer.removeAnimation(forKey: "rotation")
+        let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+        
+        animation.fromValue             = 0
+        animation.toValue               = Double.pi * 2
+        animation.duration              = 40
+        animation.repeatCount           = MAXFLOAT
+        animation.isRemovedOnCompletion = false
+        
+    }
+    
+    /// 暂停动画
+    func pasueRotationAnimation() {
+        foreImageView.layer.pauseAnimate()
+    }
+    
+    /// 继续动画
+    func resumeRotationAnimation() {
+        foreImageView.layer.resumeAnimate()
+    }
+}
+
 // MARK: - Data
 extension MusicDetailViewController{
     
     /// 当歌曲切换的时候,更新一次
     func setupDataOnce(){
+        
+//        QQMusicOperationTo
         
     }
 
