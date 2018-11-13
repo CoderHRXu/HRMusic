@@ -191,7 +191,8 @@ extension MusicDetailViewController{
     /// 当歌曲切换的时候,更新一次
     func setupDataOnce(){
         
-//        QQMusicOperationTo
+//        let musicMsgModel = QQMusicOperationTool;
+        
         
     }
 

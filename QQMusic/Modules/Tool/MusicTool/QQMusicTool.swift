@@ -33,6 +33,9 @@ class QQMusicTool: NSObject {
     }
     
     
+    /// 根据文件名播放k歌曲
+    ///
+    /// - Parameter name: 文件名
     func playMusic(name : String) {
         
         guard let url = Bundle.main.url(forResource: name, withExtension: nil) else {
