@@ -185,9 +185,9 @@
                                         </constraints>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.66612810860000005" blue="0.0013801952190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="sliderTouchDown:" destination="lLi-Rn-TJc" eventType="touchDown" id="L2G-bx-r4O"/>
-                                            <action selector="sliderTouchUp:" destination="lLi-Rn-TJc" eventType="touchUpInside" id="0rO-qJ-Fud"/>
-                                            <action selector="sliderValueChanged:" destination="lLi-Rn-TJc" eventType="valueChanged" id="WyR-YN-WvO"/>
+                                            <action selector="sliderTouchDown:" destination="lLi-Rn-TJc" eventType="touchDown" id="B4L-ws-9QR"/>
+                                            <action selector="sliderTouchUp:" destination="lLi-Rn-TJc" eventType="touchUpInside" id="KSb-17-EUh"/>
+                                            <action selector="sliderValueChanged:" destination="lLi-Rn-TJc" eventType="valueChanged" id="idU-N3-4mp"/>
                                         </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wja-Y8-Fhg">

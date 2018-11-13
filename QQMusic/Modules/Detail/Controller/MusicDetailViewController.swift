@@ -40,7 +40,7 @@ class MusicDetailViewController: UIViewController {
     
     var displayLink :CADisplayLink?
     
-    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,6 +55,8 @@ class MusicDetailViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
     
+    
+    // MARK: - Action
     /// 返回列表界面
     @IBAction func close(sender: AnyObject) {
         navigationController?.popViewController(animated: true)
@@ -83,6 +85,19 @@ class MusicDetailViewController: UIViewController {
         }else{
             
         }
+    }
+    
+    
+    @IBAction func sliderTouchDown(_ sender: UISlider) {
+        
+    }
+    
+    @IBAction func sliderTouchUp(_ sender: UISlider) {
+        
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        
     }
     
     deinit {
