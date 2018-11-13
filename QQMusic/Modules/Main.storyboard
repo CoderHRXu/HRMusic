@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iaR-bl-utn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iaR-bl-utn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,7 +73,7 @@
                                         <rect key="frame" x="8" y="30" width="40" height="40"/>
                                         <state key="normal" image="miniplayer_btn_playlist_close"/>
                                         <connections>
-                                            <action selector="close:" destination="lLi-Rn-TJc" eventType="touchUpInside" id="3zC-bq-rMu"/>
+                                            <action selector="closeWithSender:" destination="lLi-Rn-TJc" eventType="touchUpInside" id="lcf-01-JfX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -148,7 +148,7 @@
                                         <state key="normal" image="player_btn_play_normal"/>
                                         <state key="selected" image="player_btn_pause_normal"/>
                                         <connections>
-                                            <action selector="playOrPause:" destination="lLi-Rn-TJc" eventType="touchUpInside" id="9WN-Ij-Q6K"/>
+                                            <action selector="playOrPause:" destination="lLi-Rn-TJc" eventType="touchUpInside" id="8zK-WP-6ZH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pm-PS-XfE">

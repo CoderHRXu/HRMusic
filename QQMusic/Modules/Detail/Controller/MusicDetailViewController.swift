@@ -66,7 +66,25 @@ class MusicDetailViewController: UIViewController {
 //        setupDataOnce()
     }
 
+    /// 上一首按钮点击
+    @IBAction func previousSong() {
+        
+//        QQMusicOperationTool.shareInstance.previousSong()
+        setupDataOnce()
+    }
 
+    @IBAction func playOrPause(_ btn: UIButton) {
+        
+        btn.isSelected = !btn.isSelected
+        
+        if btn.isSelected {
+            
+            
+        }else{
+            
+        }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -142,6 +160,13 @@ extension MusicDetailViewController : UIScrollViewDelegate{
     /// 继续动画
     func resumeRotationAnimation() {
         foreImageView.layer.resumeAnimate()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let alpha           = 1 - scrollView.contentOffset.x - scrollView.width
+        foreImageView.alpha = alpha
+        lrcLabel.alpha      = alpha
     }
 }
 
