@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+let kStatusHeight                       = UIApplication.shared.statusBarFrame.size.height
+let kScreenWidth                        = UIScreen.main.bounds.width
+let kScreenHeight                       = UIScreen.main.bounds.height
 
 extension UIView {
     public var x: CGFloat{

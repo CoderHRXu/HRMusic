@@ -10,6 +10,9 @@ import UIKit
 
 class MusicDetailViewController: UIViewController {
 
+    @IBOutlet weak var imageW: NSLayoutConstraint!
+    @IBOutlet weak var foreImageTopCons: NSLayoutConstraint!
+    @IBOutlet weak var toolBarTopCons: NSLayoutConstraint!
     /// 前景图片 1
     @IBOutlet weak var foreImageView: UIImageView!
     /// 歌曲总时长 1
@@ -44,6 +47,7 @@ class MusicDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
     
@@ -88,10 +92,12 @@ class MusicDetailViewController: UIViewController {
         if btn.isSelected {
             
             QQMusicOperationTool.shareInstance.playCurrentMusic()
+            foreImageView.layer.resumeAnimate()
             
         }else{
             
             QQMusicOperationTool.shareInstance.pauseCurrentMusic()
+            foreImageView.layer.pauseAnimate()
         }
     }
     
@@ -126,6 +132,10 @@ extension MusicDetailViewController{
     }
     
     func setupFrame() {
+        
+        toolBarTopCons.constant = kStatusHeight > 20 ? -44 : -20
+        foreImageTopCons.constant = kScreenWidth < 375 ? 20: 60
+        imageW.constant = kScreenWidth < 375 ? 250 : 300
         setForeImageView()
     }
     
