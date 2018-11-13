@@ -49,6 +49,7 @@ class MusicDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupDataOnce()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -193,8 +194,14 @@ extension MusicDetailViewController{
     /// 当歌曲切换的时候,更新一次
     func setupDataOnce(){
         
-//        let musicMsgModel = QQMusicOperationTool;
+        let musicMsgModel = QQMusicOperationTool.shareInstance.getNewMessageModel();
         
+        let image = UIImage.init(named: (musicMsgModel.musicM?.icon)!)
+        foreImageView.image = image
+        backImageView.image = image
+        totalTimerLabel.text = musicMsgModel.totalTimeFormat
+        songNameLabel.text = musicMsgModel.musicM?.name
+        singerNameLabel.text = musicMsgModel.musicM?.singer
         
     }
 

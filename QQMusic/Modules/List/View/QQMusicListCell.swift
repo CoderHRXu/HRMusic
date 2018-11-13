@@ -3,7 +3,7 @@
 //  QQMusic
 //
 //  Created by haoran on 16/5/16.
-//  Copyright © 2016年 xuhaoran. All rights reserved.
+//  Copyright © 2016年 haoran. All rights reserved.
 //
 
 import UIKit

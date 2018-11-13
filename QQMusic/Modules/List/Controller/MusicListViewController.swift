@@ -23,7 +23,7 @@ class MusicListViewController: UITableViewController {
         setupUI()
         QQMusicDataTool.getMusicList { (dataArray) in
             self.musicList = dataArray
-            
+            QQMusicOperationTool.shareInstance.musicMList = dataArray
         }
 
     }

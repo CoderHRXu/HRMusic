@@ -43,9 +43,9 @@ class QQMusicOperationTool: NSObject {
     /// 获得最新的信息
     func getNewMessageModel() -> QQMusicMessageModel {
         
-        musicMessageModel.musicM = musicMList?[index]
+        musicMessageModel.musicM    = musicMList?[index]
         
-        musicMessageModel.costTime = tool.player?.currentTime ?? 0
+        musicMessageModel.costTime  = tool.player?.currentTime ?? 0
         musicMessageModel.totalTime = tool.player?.duration ?? 0
         musicMessageModel.isPlaying = tool.player?.isPlaying ?? false
         

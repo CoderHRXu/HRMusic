@@ -10,6 +10,7 @@
 		AD81BDDD219AA4B600772DF5 /* 周杰伦-晴天.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AD81BDDC219AA4B600772DF5 /* 周杰伦-晴天.mp3 */; };
 		AD81BDDF219AA58000772DF5 /* jayYHM@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD81BDDE219AA58000772DF5 /* jayYHM@2x.jpg */; };
 		AD81BDE1219AA5CA00772DF5 /* 晴天.lrc in Resources */ = {isa = PBXBuildFile; fileRef = AD81BDE0219AA5CA00772DF5 /* 晴天.lrc */; };
+		AD81BDE3219AAA0900772DF5 /* QQLrcLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81BDE2219AAA0900772DF5 /* QQLrcLabel.swift */; };
 		ADCA60C0218AE3B900E70422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA60BF218AE3B900E70422 /* AppDelegate.swift */; };
 		ADCA60C7218AE3BA00E70422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60C6218AE3BA00E70422 /* Assets.xcassets */; };
 		ADCA60CA218AE3BA00E70422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60C8218AE3BA00E70422 /* LaunchScreen.storyboard */; };
@@ -76,6 +77,7 @@
 		AD81BDDC219AA4B600772DF5 /* 周杰伦-晴天.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "周杰伦-晴天.mp3"; sourceTree = "<group>"; };
 		AD81BDDE219AA58000772DF5 /* jayYHM@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "jayYHM@2x.jpg"; sourceTree = "<group>"; };
 		AD81BDE0219AA5CA00772DF5 /* 晴天.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "晴天.lrc"; sourceTree = "<group>"; };
+		AD81BDE2219AAA0900772DF5 /* QQLrcLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QQLrcLabel.swift; sourceTree = "<group>"; };
 		ADCA60BC218AE3B900E70422 /* QQMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCA60BF218AE3B900E70422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADCA60C6218AE3BA00E70422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			children = (
 				ADCA616D218AF1CE00E70422 /* QQMusicListCell.swift */,
 				ADCA616E218AF1CE00E70422 /* QQMusicListCell.xib */,
+				AD81BDE2219AAA0900772DF5 /* QQLrcLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				ADCA616A218AEF4300E70422 /* QQMusicModel.swift in Sources */,
 				ADCA6168218AEEAC00E70422 /* QQMusicDataTool.swift in Sources */,
 				ADCA6175218C245200E70422 /* NotificationCenter+QQ.swift in Sources */,
+				AD81BDE3219AAA0900772DF5 /* QQLrcLabel.swift in Sources */,
 				ADCA6173218BE4CE00E70422 /* QQMusicTool.swift in Sources */,
 				ADCA613B218AE82600E70422 /* UIView+Extension.swift in Sources */,
 				ADCA60D3218AE42300E70422 /* ViewController.swift in Sources */,
