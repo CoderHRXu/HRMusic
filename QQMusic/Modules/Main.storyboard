@@ -54,13 +54,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="孤独症患者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIe-aA-aIF">
-                                        <rect key="frame" x="257" y="30" width="87" height="21"/>
+                                        <rect key="frame" x="144" y="30" width="87" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈奕迅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYy-os-Zau">
-                                        <rect key="frame" x="280.5" y="59" width="40" height="16"/>
+                                        <rect key="frame" x="167.5" y="59" width="40" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -86,7 +86,7 @@
                                     <constraint firstItem="8IP-Ww-KVo" firstAttribute="top" secondItem="oIe-aA-aIF" secondAttribute="top" id="VxZ-zh-ObG"/>
                                     <constraint firstAttribute="trailing" secondItem="8IP-Ww-KVo" secondAttribute="trailing" constant="8" id="Zuk-vC-nN6"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="aPH-hu-q5e"/>
-                                    <constraint firstItem="oIe-aA-aIF" firstAttribute="centerX" secondItem="Kyu-fL-gcH" secondAttribute="centerX" constant="113" id="dTM-AH-oMs"/>
+                                    <constraint firstItem="oIe-aA-aIF" firstAttribute="centerX" secondItem="Kyu-fL-gcH" secondAttribute="centerX" id="dTM-AH-oMs"/>
                                     <constraint firstAttribute="height" constant="100" id="lyx-LS-ERY"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="ngl-40-SgY"/>
                                     <constraint firstItem="FEy-z0-oJo" firstAttribute="top" secondItem="oIe-aA-aIF" secondAttribute="top" id="rOf-eY-UB5"/>

@@ -52,6 +52,11 @@ class MusicDetailViewController: UIViewController {
         setupDataOnce()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setupFrame()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
@@ -121,7 +126,7 @@ extension MusicDetailViewController{
     }
     
     func setupFrame() {
-        
+        setForeImageView()
     }
     
     /// 设置进度条
@@ -133,6 +138,11 @@ extension MusicDetailViewController{
         tap.delegate = self as UIGestureRecognizerDelegate
         slider.addGestureRecognizer(tap)
         
+    }
+    
+    func setForeImageView() {
+        foreImageView.layer.cornerRadius = foreImageView.width * 0.5
+        foreImageView.layer.masksToBounds = true
     }
     
     @objc func touchSlider() {
@@ -160,14 +170,15 @@ extension MusicDetailViewController : UIScrollViewDelegate{
         
         // 1.移除之前的动画
         foreImageView.layer.removeAnimation(forKey: "rotation")
-        let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+        let animation                   = CABasicAnimation(keyPath: "transform.rotation.z")
         
         animation.fromValue             = 0
         animation.toValue               = Double.pi * 2
-        animation.duration              = 40
+        animation.duration              = 50
         animation.repeatCount           = MAXFLOAT
         animation.isRemovedOnCompletion = false
         
+        foreImageView.layer.add(animation, forKey: "rotation")
     }
     
     /// 暂停动画
@@ -202,6 +213,15 @@ extension MusicDetailViewController{
         totalTimerLabel.text = musicMsgModel.totalTimeFormat
         songNameLabel.text = musicMsgModel.musicM?.name
         singerNameLabel.text = musicMsgModel.musicM?.singer
+        
+        
+        addRotationAnimation()
+        
+        if musicMsgModel.isPlaying {
+            resumeRotationAnimation()
+        }else{
+            pasueRotationAnimation()
+        }
         
     }
 
