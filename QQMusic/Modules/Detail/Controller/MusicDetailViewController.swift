@@ -74,13 +74,14 @@ class MusicDetailViewController: UIViewController {
 
     /// 下一首按钮点击
     @IBAction func nextSong() {
+        addDisapperAnimation()
         QQMusicOperationTool.shareInstance.playNextSong()
         setupDataOnce()
     }
 
     /// 上一首按钮点击
     @IBAction func previousSong() {
-        
+        addDisapperAnimation()
         QQMusicOperationTool.shareInstance.playPreviousSong()
         setupDataOnce()
     }
@@ -133,9 +134,9 @@ extension MusicDetailViewController{
     
     func setupFrame() {
         
-        toolBarTopCons.constant = kStatusHeight > 20 ? -44 : -20
-        foreImageTopCons.constant = kScreenWidth < 375 ? 20: 60
-        imageW.constant = kScreenWidth < 375 ? 250 : 300
+        toolBarTopCons.constant     = kStatusHeight > 20 ? -44 : -20
+        foreImageTopCons.constant   = kScreenWidth < 375 ? 20: 60
+        imageW.constant             = kScreenWidth < 375 ? 250 : 300
         setForeImageView()
     }
     
@@ -191,6 +192,36 @@ extension MusicDetailViewController : UIScrollViewDelegate{
         foreImageView.layer.add(animation, forKey: "rotation")
     }
     
+    func addDisapperAnimation() {
+        // 1.移除之前的动画
+        
+        let imageView                   = UIImageView.init(image: foreImageView.image)
+        imageView.frame                 = foreImageView.frame
+        imageView.layer.cornerRadius    = imageView.width * 0.5
+        imageView.layer.masksToBounds   = true
+        let musicMsgModel               = QQMusicOperationTool.shareInstance.getNewMessageModel()
+        let m                           = Int(musicMsgModel.costTime) / 50
+        let angle :Double               = (musicMsgModel.costTime - 50 * Double(m)) / 50 * Double.pi * 2
+        foreImageView.superview?.addSubview(imageView)
+        
+//        imageView.transform             = CGAffineTransform(rotationAngle: CGFloat(angle))
+//        imageView.layer.anchorPoint     = CGPoint(x: 0.5, y: 0.5);
+//        imageView.layer.transform       = CATransform3DRotate(1, angle, <#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##z: CGFloat##CGFloat#>)
+        
+        UIView.animate(withDuration: 1, animations: {
+            imageView.y                 = -imageView.height;
+            imageView.alpha             = 0;
+        }) { (finished) in
+            if finished {
+                imageView.removeFromSuperview()
+            }
+        }
+        
+        
+       
+
+    }
+    
     /// 暂停动画
     func pasueRotationAnimation() {
         foreImageView.layer.pauseAnimate()
@@ -217,15 +248,19 @@ extension MusicDetailViewController{
         
         let musicMsgModel = QQMusicOperationTool.shareInstance.getNewMessageModel();
         
-        let image = UIImage.init(named: (musicMsgModel.musicM?.icon)!)
-        foreImageView.image = image
-        backImageView.image = image
-        totalTimerLabel.text = musicMsgModel.totalTimeFormat
-        songNameLabel.text = musicMsgModel.musicM?.name
-        singerNameLabel.text = musicMsgModel.musicM?.singer
         
-        
-        addRotationAnimation()
+        let image               = UIImage.init(named: (musicMsgModel.musicM?.icon)!)
+        self.foreImageView.image     = image
+        self.backImageView.image     = image
+        totalTimerLabel.text    = musicMsgModel.totalTimeFormat
+        songNameLabel.text      = musicMsgModel.musicM?.name
+        singerNameLabel.text    = musicMsgModel.musicM?.singer
+
+        self.addRotationAnimation()
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+//            self.addRotationAnimation()
+//
+//        }
         
         if musicMsgModel.isPlaying {
             resumeRotationAnimation()
