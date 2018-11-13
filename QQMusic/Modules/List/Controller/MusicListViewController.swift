@@ -92,6 +92,7 @@ extension MusicListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let musicM = self.musicList[indexPath.row]
+        QQMusicOperationTool.shareInstance.playMusic(music: musicM)
         self.performSegue(withIdentifier: "ToDetail", sender: nil)
         
     }

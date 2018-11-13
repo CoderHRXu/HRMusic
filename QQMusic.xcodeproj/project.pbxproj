@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD81BDDD219AA4B600772DF5 /* 周杰伦-晴天.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AD81BDDC219AA4B600772DF5 /* 周杰伦-晴天.mp3 */; };
+		AD81BDDF219AA58000772DF5 /* jayYHM@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD81BDDE219AA58000772DF5 /* jayYHM@2x.jpg */; };
+		AD81BDE1219AA5CA00772DF5 /* 晴天.lrc in Resources */ = {isa = PBXBuildFile; fileRef = AD81BDE0219AA5CA00772DF5 /* 晴天.lrc */; };
 		ADCA60C0218AE3B900E70422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA60BF218AE3B900E70422 /* AppDelegate.swift */; };
 		ADCA60C7218AE3BA00E70422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60C6218AE3BA00E70422 /* Assets.xcassets */; };
 		ADCA60CA218AE3BA00E70422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60C8218AE3BA00E70422 /* LaunchScreen.storyboard */; };
@@ -70,6 +73,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD81BDDC219AA4B600772DF5 /* 周杰伦-晴天.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "周杰伦-晴天.mp3"; sourceTree = "<group>"; };
+		AD81BDDE219AA58000772DF5 /* jayYHM@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "jayYHM@2x.jpg"; sourceTree = "<group>"; };
+		AD81BDE0219AA5CA00772DF5 /* 晴天.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "晴天.lrc"; sourceTree = "<group>"; };
 		ADCA60BC218AE3B900E70422 /* QQMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCA60BF218AE3B900E70422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADCA60C6218AE3BA00E70422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 		ADCA60D9218AE5DF00E70422 /* Lrcs */ = {
 			isa = PBXGroup;
 			children = (
+				AD81BDE0219AA5CA00772DF5 /* 晴天.lrc */,
 				ADCA60DA218AE5DF00E70422 /* 月半小夜曲.lrc */,
 				ADCA60DB218AE5DF00E70422 /* 255319.lrc */,
 				ADCA60DC218AE5DF00E70422 /* 14945107.lrc */,
@@ -248,6 +255,7 @@
 				ADCA60F6218AE5DF00E70422 /* bb_icon@2x.jpg */,
 				ADCA60F7218AE5DF00E70422 /* zxy_icon@2x.jpg */,
 				ADCA60F8218AE5DF00E70422 /* nanquan_icon@2x.jpg */,
+				AD81BDDE219AA58000772DF5 /* jayYHM@2x.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 				ADCA6101218AE5DF00E70422 /* 120125029.mp3 */,
 				ADCA6102218AE5DF00E70422 /* 12309111.mp3 */,
 				ADCA6103218AE5DF00E70422 /* 339744.mp3 */,
+				AD81BDDC219AA4B600772DF5 /* 周杰伦-晴天.mp3 */,
 			);
 			path = MP3s;
 			sourceTree = "<group>";
@@ -459,6 +468,7 @@
 				ADCA6145218AE8DF00E70422 /* 235319.mp3 in Resources */,
 				ADCA6161218AE92500E70422 /* 235319.lrc in Resources */,
 				ADCA6152218AE90300E70422 /* wf_icon@2x.jpg in Resources */,
+				AD81BDDD219AA4B600772DF5 /* 周杰伦-晴天.mp3 in Resources */,
 				ADCA6160218AE92200E70422 /* 309769.lrc in Resources */,
 				ADCA6156218AE90C00E70422 /* eason@2x.jpg in Resources */,
 				ADCA613E218AE8CC00E70422 /* 339744.mp3 in Resources */,
@@ -472,6 +482,7 @@
 				ADCA614B218AE8F500E70422 /* jay_icon@2x.png in Resources */,
 				ADCA6147218AE8E300E70422 /* 14945107.mp3 in Resources */,
 				ADCA614D218AE8F900E70422 /* zxy@2x.jpg in Resources */,
+				AD81BDE1219AA5CA00772DF5 /* 晴天.lrc in Resources */,
 				ADCA614C218AE8F700E70422 /* dzq_icon@2x.jpg in Resources */,
 				ADCA6155218AE90900E70422 /* bb@2x.jpg in Resources */,
 				ADCA60CA218AE3BA00E70422 /* LaunchScreen.storyboard in Resources */,
@@ -485,6 +496,7 @@
 				ADCA6153218AE90500E70422 /* eason_icon@2x.jpg in Resources */,
 				ADCA6170218AF1D500E70422 /* QQMusicListCell.xib in Resources */,
 				ADCA614A218AE8F300E70422 /* lkq_icon@2x.jpg in Resources */,
+				AD81BDDF219AA58000772DF5 /* jayYHM@2x.jpg in Resources */,
 				ADCA6141218AE8D600E70422 /* 10405520.mp3 in Resources */,
 				ADCA6151218AE90100E70422 /* lkq@2x.jpg in Resources */,
 				ADCA615D218AE91C00E70422 /* 255319.lrc in Resources */,

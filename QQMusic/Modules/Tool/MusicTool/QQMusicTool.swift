@@ -54,9 +54,10 @@ class QQMusicTool: NSObject {
         }
         
         // 准备播放
-        player?.prepareToPlay()
+        if (player?.prepareToPlay())! {
+            player?.play()
+        }
         
-        player?.play()
     }
     
     
@@ -67,7 +68,7 @@ class QQMusicTool: NSObject {
     
     /// 继续播放
     func resumeCurrentMusic() {
-        player?.pause()
+        player?.play()
     }
     
     /// 跳转到指定时间播放

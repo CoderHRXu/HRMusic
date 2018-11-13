@@ -64,14 +64,14 @@ class MusicDetailViewController: UIViewController {
 
     /// 下一首按钮点击
     @IBAction func nextSong() {
-//        QQMusicOperationTool.shareInstance.nextSong()
-//        setupDataOnce()
+        QQMusicOperationTool.shareInstance.playNextSong()
+        setupDataOnce()
     }
 
     /// 上一首按钮点击
     @IBAction func previousSong() {
         
-//        QQMusicOperationTool.shareInstance.previousSong()
+        QQMusicOperationTool.shareInstance.playPreviousSong()
         setupDataOnce()
     }
 
@@ -81,9 +81,11 @@ class MusicDetailViewController: UIViewController {
         
         if btn.isSelected {
             
+            QQMusicOperationTool.shareInstance.playCurrentMusic()
             
         }else{
             
+            QQMusicOperationTool.shareInstance.pauseCurrentMusic()
         }
     }
     
