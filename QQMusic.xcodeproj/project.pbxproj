@@ -11,6 +11,11 @@
 		AD81BDDF219AA58000772DF5 /* jayYHM@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD81BDDE219AA58000772DF5 /* jayYHM@2x.jpg */; };
 		AD81BDE1219AA5CA00772DF5 /* 晴天.lrc in Resources */ = {isa = PBXBuildFile; fileRef = AD81BDE0219AA5CA00772DF5 /* 晴天.lrc */; };
 		AD81BDE3219AAA0900772DF5 /* QQLrcLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81BDE2219AAA0900772DF5 /* QQLrcLabel.swift */; };
+		AD81BDE5219AEDEC00772DF5 /* LrcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81BDE4219AEDEC00772DF5 /* LrcViewController.swift */; };
+		AD81BDE6219AF19F00772DF5 /* QQLrcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA617B218C3AF800E70422 /* QQLrcModel.swift */; };
+		AD81BDE9219AF28900772DF5 /* QQLrcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81BDE7219AF28900772DF5 /* QQLrcCell.swift */; };
+		AD81BDEA219AF28900772DF5 /* QQLrcCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD81BDE8219AF28900772DF5 /* QQLrcCell.xib */; };
+		AD81BDEC219BB42A00772DF5 /* QQLrcDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81BDEB219BB42A00772DF5 /* QQLrcDataTool.swift */; };
 		ADCA60C0218AE3B900E70422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA60BF218AE3B900E70422 /* AppDelegate.swift */; };
 		ADCA60C7218AE3BA00E70422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60C6218AE3BA00E70422 /* Assets.xcassets */; };
 		ADCA60CA218AE3BA00E70422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60C8218AE3BA00E70422 /* LaunchScreen.storyboard */; };
@@ -78,6 +83,10 @@
 		AD81BDDE219AA58000772DF5 /* jayYHM@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "jayYHM@2x.jpg"; sourceTree = "<group>"; };
 		AD81BDE0219AA5CA00772DF5 /* 晴天.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "晴天.lrc"; sourceTree = "<group>"; };
 		AD81BDE2219AAA0900772DF5 /* QQLrcLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QQLrcLabel.swift; sourceTree = "<group>"; };
+		AD81BDE4219AEDEC00772DF5 /* LrcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LrcViewController.swift; sourceTree = "<group>"; };
+		AD81BDE7219AF28900772DF5 /* QQLrcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QQLrcCell.swift; sourceTree = "<group>"; };
+		AD81BDE8219AF28900772DF5 /* QQLrcCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QQLrcCell.xib; sourceTree = "<group>"; };
+		AD81BDEB219BB42A00772DF5 /* QQLrcDataTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QQLrcDataTool.swift; sourceTree = "<group>"; };
 		ADCA60BC218AE3B900E70422 /* QQMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCA60BF218AE3B900E70422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADCA60C6218AE3BA00E70422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -340,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				ADCA6178218C2CDE00E70422 /* MusicDetailViewController.swift */,
+				AD81BDE4219AEDEC00772DF5 /* LrcViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -356,6 +366,8 @@
 		ADCA6137218AE7C600E70422 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AD81BDE7219AF28900772DF5 /* QQLrcCell.swift */,
+				AD81BDE8219AF28900772DF5 /* QQLrcCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,6 +395,7 @@
 			children = (
 				ADCA6172218BE4CE00E70422 /* QQMusicTool.swift */,
 				ADCA6176218C2A0600E70422 /* QQMusicOperationTool.swift */,
+				AD81BDEB219BB42A00772DF5 /* QQLrcDataTool.swift */,
 			);
 			path = MusicTool;
 			sourceTree = "<group>";
@@ -465,6 +478,7 @@
 				ADCA614F218AE8FD00E70422 /* dzq@2x.jpg in Resources */,
 				ADCA6140218AE8D200E70422 /* 120125029.mp3 in Resources */,
 				ADCA60D6218AE59900E70422 /* Main.storyboard in Resources */,
+				AD81BDEA219AF28900772DF5 /* QQLrcCell.xib in Resources */,
 				ADCA6149218AE8F100E70422 /* jay@2x.jpg in Resources */,
 				ADCA6150218AE8FF00E70422 /* jj@2x.jpg in Resources */,
 				ADCA615A218AE91400E70422 /* zxy_icon@2x.jpg in Resources */,
@@ -518,7 +532,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADCA613C218AE82600E70422 /* CALayer+sz.swift in Sources */,
+				AD81BDE9219AF28900772DF5 /* QQLrcCell.swift in Sources */,
 				ADCA616A218AEF4300E70422 /* QQMusicModel.swift in Sources */,
+				AD81BDEC219BB42A00772DF5 /* QQLrcDataTool.swift in Sources */,
+				AD81BDE5219AEDEC00772DF5 /* LrcViewController.swift in Sources */,
 				ADCA6168218AEEAC00E70422 /* QQMusicDataTool.swift in Sources */,
 				ADCA6175218C245200E70422 /* NotificationCenter+QQ.swift in Sources */,
 				AD81BDE3219AAA0900772DF5 /* QQLrcLabel.swift in Sources */,
@@ -526,6 +543,7 @@
 				ADCA613B218AE82600E70422 /* UIView+Extension.swift in Sources */,
 				ADCA60D3218AE42300E70422 /* ViewController.swift in Sources */,
 				ADCA60C0218AE3B900E70422 /* AppDelegate.swift in Sources */,
+				AD81BDE6219AF19F00772DF5 /* QQLrcModel.swift in Sources */,
 				ADCA6177218C2A0600E70422 /* QQMusicOperationTool.swift in Sources */,
 				ADCA617F218C529700E70422 /* QQMusicMessageModel.swift in Sources */,
 				ADCA6179218C2CDE00E70422 /* MusicDetailViewController.swift in Sources */,

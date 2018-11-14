@@ -43,6 +43,11 @@ class MusicDetailViewController: UIViewController {
     
     var displayLink :CADisplayLink?
     
+    lazy var lrcVC: LrcViewController = {
+        let vc = LrcViewController()
+        return vc
+    }()
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -256,7 +261,13 @@ extension MusicDetailViewController{
         songNameLabel.text      = musicMsgModel.musicM?.name
         singerNameLabel.text    = musicMsgModel.musicM?.singer
 
-        self.addRotationAnimation()
+//        let lrcModel = qqlrcd
+        
+        
+        
+        
+        
+        addRotationAnimation()
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
 //            self.addRotationAnimation()
 //
