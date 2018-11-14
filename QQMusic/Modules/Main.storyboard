@@ -70,7 +70,7 @@
                                         <state key="normal" image="main_tab_more"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEy-z0-oJo">
-                                        <rect key="frame" x="8" y="40" width="40" height="40"/>
+                                        <rect key="frame" x="20" y="40" width="20" height="45"/>
                                         <state key="normal" image="miniplayer_btn_playlist_close"/>
                                         <connections>
                                             <action selector="closeWithSender:" destination="lLi-Rn-TJc" eventType="touchUpInside" id="lcf-01-JfX"/>
@@ -82,7 +82,8 @@
                                     <constraint firstItem="JYy-os-Zau" firstAttribute="top" secondItem="oIe-aA-aIF" secondAttribute="bottom" constant="8" id="1oR-sE-5PL"/>
                                     <constraint firstItem="JYy-os-Zau" firstAttribute="centerX" secondItem="oIe-aA-aIF" secondAttribute="centerX" id="6cv-N9-QUQ"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="DU6-To-Cuo"/>
-                                    <constraint firstItem="FEy-z0-oJo" firstAttribute="leading" secondItem="Kyu-fL-gcH" secondAttribute="leading" constant="8" id="UJe-oW-pqG"/>
+                                    <constraint firstItem="FEy-z0-oJo" firstAttribute="centerY" secondItem="8IP-Ww-KVo" secondAttribute="centerY" id="SVe-xL-khi"/>
+                                    <constraint firstItem="FEy-z0-oJo" firstAttribute="leading" secondItem="Kyu-fL-gcH" secondAttribute="leading" constant="20" id="UJe-oW-pqG"/>
                                     <constraint firstItem="8IP-Ww-KVo" firstAttribute="top" secondItem="oIe-aA-aIF" secondAttribute="top" id="VxZ-zh-ObG"/>
                                     <constraint firstAttribute="trailing" secondItem="8IP-Ww-KVo" secondAttribute="trailing" constant="8" id="Zuk-vC-nN6"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="aPH-hu-q5e"/>
@@ -297,7 +298,7 @@
     <resources>
         <image name="jay.jpg" width="350" height="350"/>
         <image name="main_tab_more" width="45" height="45"/>
-        <image name="miniplayer_btn_playlist_close" width="40" height="40"/>
+        <image name="miniplayer_btn_playlist_close" width="20" height="12"/>
         <image name="player_btn_next_normal" width="64" height="64"/>
         <image name="player_btn_pause_normal" width="64" height="64"/>
         <image name="player_btn_play_normal" width="64" height="64"/>

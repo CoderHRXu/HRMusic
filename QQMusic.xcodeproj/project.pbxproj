@@ -21,7 +21,6 @@
 		ADCA60CA218AE3BA00E70422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60C8218AE3BA00E70422 /* LaunchScreen.storyboard */; };
 		ADCA60D3218AE42300E70422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA60D2218AE42300E70422 /* ViewController.swift */; };
 		ADCA60D6218AE59900E70422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60D5218AE48200E70422 /* Main.storyboard */; };
-		ADCA612E218AE67400E70422 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCA612D218AE67400E70422 /* Images.xcassets */; };
 		ADCA613B218AE82600E70422 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA6139218AE82600E70422 /* UIView+Extension.swift */; };
 		ADCA613C218AE82600E70422 /* CALayer+sz.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA613A218AE82600E70422 /* CALayer+sz.swift */; };
 		ADCA613D218AE8C200E70422 /* Musics.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADCA6104218AE5DF00E70422 /* Musics.plist */; };
@@ -135,7 +134,6 @@
 		ADCA6102218AE5DF00E70422 /* 12309111.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12309111.mp3; sourceTree = "<group>"; };
 		ADCA6103218AE5DF00E70422 /* 339744.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 339744.mp3; sourceTree = "<group>"; };
 		ADCA6104218AE5DF00E70422 /* Musics.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Musics.plist; sourceTree = "<group>"; };
-		ADCA612D218AE67400E70422 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ADCA6139218AE82600E70422 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		ADCA613A218AE82600E70422 /* CALayer+sz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+sz.swift"; sourceTree = "<group>"; };
 		ADCA6167218AEEAC00E70422 /* QQMusicDataTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QQMusicDataTool.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				ADCA60D1218AE42300E70422 /* Modules */,
 				ADCA60D8218AE5DF00E70422 /* QQResources */,
 				ADCA60D4218AE43200E70422 /* SupportingFiles */,
-				ADCA612D218AE67400E70422 /* Images.xcassets */,
 			);
 			path = QQMusic;
 			sourceTree = "<group>";
@@ -490,7 +487,6 @@
 				ADCA6156218AE90C00E70422 /* eason@2x.jpg in Resources */,
 				ADCA613E218AE8CC00E70422 /* 339744.mp3 in Resources */,
 				ADCA615F218AE92000E70422 /* 10736444.lrc in Resources */,
-				ADCA612E218AE67400E70422 /* Images.xcassets in Resources */,
 				ADCA6165218AE92D00E70422 /* 120125029.lrc in Resources */,
 				ADCA6144218AE8DD00E70422 /* 309769.mp3 in Resources */,
 				ADCA615C218AE91900E70422 /* 月半小夜曲.lrc in Resources */,
