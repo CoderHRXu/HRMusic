@@ -111,8 +111,8 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是歌词" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRT-CD-lIo" customClass="QQLrcLabel" customModule="QQMusic" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="390" width="87" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是歌词" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRT-CD-lIo" customClass="QQLrcLabel" customModule="QQMusic" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="390" width="345" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -126,8 +126,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xRT-CD-lIo" secondAttribute="trailing" constant="15" id="85b-8U-xsQ"/>
                                     <constraint firstItem="u9E-8g-zTm" firstAttribute="leading" secondItem="Hqy-o5-ddC" secondAttribute="leading" id="Fp4-LQ-aoh"/>
                                     <constraint firstAttribute="bottom" secondItem="u9E-8g-zTm" secondAttribute="bottom" id="JCJ-1c-Nal"/>
+                                    <constraint firstItem="xRT-CD-lIo" firstAttribute="leading" secondItem="Hqy-o5-ddC" secondAttribute="leading" constant="15" id="LnE-ie-Kf8"/>
                                     <constraint firstItem="xRT-CD-lIo" firstAttribute="centerX" secondItem="Uj0-hk-pZ0" secondAttribute="centerX" id="M2O-DY-gp8"/>
                                     <constraint firstItem="Uj0-hk-pZ0" firstAttribute="centerX" secondItem="Hqy-o5-ddC" secondAttribute="centerX" id="dfG-L7-vBp"/>
                                     <constraint firstItem="u9E-8g-zTm" firstAttribute="top" secondItem="Hqy-o5-ddC" secondAttribute="top" id="dpd-gO-ain"/>
@@ -159,26 +161,28 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPM-Tp-cPc">
-                                        <rect key="frame" x="10" y="8" width="36.5" height="15"/>
+                                        <rect key="frame" x="10" y="8" width="40" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="Aud-sw-JLx"/>
+                                            <constraint firstAttribute="width" constant="40" id="zSz-Gx-IVZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAU-ih-iTO">
-                                        <rect key="frame" x="328.5" y="8" width="36.5" height="15"/>
+                                        <rect key="frame" x="325" y="8" width="40" height="15"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="ctU-EM-EFS"/>
+                                            <constraint firstAttribute="width" constant="40" id="lW5-ka-T4O"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GCA-c9-Adh">
-                                        <rect key="frame" x="54.5" y="0.0" width="266" height="31"/>
+                                        <rect key="frame" x="58" y="0.0" width="259" height="31"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="eXq-ad-lOg"/>

@@ -51,7 +51,7 @@ class MusicDetailViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViewOnce()
         
         // Do any additional setup after loading the view.
     }
@@ -83,14 +83,14 @@ class MusicDetailViewController: UIViewController {
 
     /// 下一首按钮点击
     @IBAction func nextSong() {
-        addDisapperAnimation()
+//        addDisapperAnimation()
         QQMusicOperationTool.shareInstance.playNextSong()
         setupDataOnce()
     }
 
     /// 上一首按钮点击
     @IBAction func previousSong() {
-        addDisapperAnimation()
+//        addDisapperAnimation()
         QQMusicOperationTool.shareInstance.playPreviousSong()
         setupDataOnce()
     }
@@ -147,7 +147,7 @@ class MusicDetailViewController: UIViewController {
 // MARK: - UI
 extension MusicDetailViewController{
     
-    func setupOnce() {
+    func setupViewOnce() {
         setUpSlider()
         setupLrcView()
         
@@ -208,6 +208,17 @@ extension  MusicDetailViewController: UIGestureRecognizerDelegate{
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         
+        // 1.计算比例
+        let curP = touch.location(in: slider)
+        let value = curP.x / slider.size.width
+        
+        // 2.算出时间
+        let totalTime = QQMusicOperationTool.shareInstance.getNewMessageModel().totalTime
+        let currentTime = totalTime * Double(value)
+        
+        // 3.设置当前播放进度
+        slider.value = Float(value)
+        QQMusicOperationTool.shareInstance.tool.jumpTo(timeInterval: currentTime)
         
         return true
     }
@@ -273,9 +284,10 @@ extension MusicDetailViewController : UIScrollViewDelegate{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        let alpha           = 1 - scrollView.contentOffset.x - scrollView.width
+        let alpha           = 1 - scrollView.contentOffset.x / scrollView.width
         foreImageView.alpha = alpha
         lrcLabel.alpha      = alpha
+       
     }
 }
 
@@ -368,3 +380,4 @@ extension MusicDetailViewController{
         displayLink = nil
     }
 }
+

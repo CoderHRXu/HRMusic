@@ -25,11 +25,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="0Ne-JX-FwO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="CfO-vW-W2X"/>
                     <constraint firstItem="0Ne-JX-FwO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Iih-Qn-DRG"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="lrcContentLabel" destination="0Ne-JX-FwO" id="kQN-MZ-Q3p"/>
             </connections>

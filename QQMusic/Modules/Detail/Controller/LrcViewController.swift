@@ -50,6 +50,7 @@ class LrcViewController: UITableViewController {
         super.viewDidLoad()
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        
     }
     
     override func viewWillLayoutSubviews() {
