@@ -37,7 +37,7 @@ class MusicDetailViewController: UIViewController {
     /// 进度条 n
     @IBOutlet weak var slider: UISlider!
     /// 歌词显示框 n
-    @IBOutlet weak var lrcLabel: UILabel!
+    @IBOutlet weak var lrcLabel: QQLrcLabel!
     
     var timer : Timer?
     
@@ -58,7 +58,9 @@ class MusicDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addTimer()
         setupDataOnce()
+        addDisplayLink()
     }
     
     override func viewWillLayoutSubviews() {
@@ -68,6 +70,8 @@ class MusicDetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        removeTimer()
+        removeDisplayLink()
     }
     
     
@@ -107,17 +111,29 @@ class MusicDetailViewController: UIViewController {
         }
     }
     
-    
+    // 进度条逻辑处理
+    /// 进度条按下
     @IBAction func sliderTouchDown(_ sender: UISlider) {
-        
+        removeTimer()
     }
     
+    // 添加定时器啊
+    // 并且, 控制当前的播放进度
     @IBAction func sliderTouchUp(_ sender: UISlider) {
+        addTimer()
+        let totalTime = QQMusicOperationTool.shareInstance.getNewMessageModel().totalTime
+        let currentTime = totalTime * Double(sender.value)
         
+        QQMusicOperationTool.shareInstance.tool.jumpTo(timeInterval: currentTime)
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         
+        // 1. 计算当前时间(0-1)
+        // 总时长
+        let totalTime           = QQMusicOperationTool.shareInstance.getNewMessageModel().totalTime
+        let currentTime         = totalTime * Double(sender.value)
+        costTimeLabel.text      = TimeTool.getFormatTime(time: currentTime)
     }
     
     deinit {
@@ -133,7 +149,7 @@ extension MusicDetailViewController{
     
     func setupOnce() {
         setUpSlider()
-//        setupLrcView()
+        setupLrcView()
         
     }
     
@@ -143,6 +159,7 @@ extension MusicDetailViewController{
         foreImageTopCons.constant   = kScreenWidth < 375 ? 20: 60
         imageW.constant             = kScreenWidth < 375 ? 250 : 300
         setForeImageView()
+        setupLrcViewFrame()
     }
     
     /// 设置进度条
@@ -150,15 +167,32 @@ extension MusicDetailViewController{
         
         slider.setThumbImage(UIImage.init(named: "player_slider_playback_thumb"), for: .normal)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(touchSlider))
-        tap.delegate = self as UIGestureRecognizerDelegate
+        let tap                                     = UITapGestureRecognizer(target: self, action: #selector(touchSlider))
+        tap.delegate                                = self as UIGestureRecognizerDelegate
         slider.addGestureRecognizer(tap)
         
     }
     
     func setForeImageView() {
-        foreImageView.layer.cornerRadius = foreImageView.width * 0.5
-        foreImageView.layer.masksToBounds = true
+        foreImageView.layer.cornerRadius            = foreImageView.width * 0.5
+        foreImageView.layer.masksToBounds           = true
+    }
+    
+    func setupLrcView() {
+        
+        lrcVC.tableView.backgroundColor             = UIColor.clear
+        
+        LrcBackView.addSubview(lrcVC.tableView)
+        LrcBackView.isPagingEnabled                 = true
+        LrcBackView.showsHorizontalScrollIndicator  = false
+    }
+    
+    // 布局  N次(准确说, 是执行多少次都没有关系的), 放到有可能不是一次的方法中执行
+    func setupLrcViewFrame() {
+        
+        lrcVC.tableView.frame   = LrcBackView.bounds
+        lrcVC.tableView.x       = LrcBackView.bounds.width
+        LrcBackView.contentSize = CGSize(width: LrcBackView.width * 2, height: LrcBackView.height)
     }
     
     @objc func touchSlider() {
@@ -251,19 +285,18 @@ extension MusicDetailViewController{
     /// 当歌曲切换的时候,更新一次
     func setupDataOnce(){
         
-        let musicMsgModel = QQMusicOperationTool.shareInstance.getNewMessageModel();
+        let musicMsgModel           = QQMusicOperationTool.shareInstance.getNewMessageModel();
         
         
-        let image               = UIImage.init(named: (musicMsgModel.musicM?.icon)!)
-        self.foreImageView.image     = image
-        self.backImageView.image     = image
-        totalTimerLabel.text    = musicMsgModel.totalTimeFormat
-        songNameLabel.text      = musicMsgModel.musicM?.name
-        singerNameLabel.text    = musicMsgModel.musicM?.singer
+        let image                   = UIImage.init(named: (musicMsgModel.musicM?.icon)!)
+        self.foreImageView.image    = image
+        self.backImageView.image    = image
+        totalTimerLabel.text        = musicMsgModel.totalTimeFormat
+        songNameLabel.text          = musicMsgModel.musicM?.name
+        singerNameLabel.text        = musicMsgModel.musicM?.singer
 
-//        let lrcModel = qqlrcd
-        
-        
+        let lrcModelArray           = QQLrcDataTool.getLrcData(fileName: (musicMsgModel.musicM?.lrcname)!)
+        lrcVC.dataSource            = lrcModelArray
         
         
         
@@ -281,4 +314,57 @@ extension MusicDetailViewController{
         
     }
 
+    
+    /// 更新多次
+    @objc func setupDataTimes() {
+        
+        let musicMsgModel           = QQMusicOperationTool.shareInstance.getNewMessageModel()
+        
+        costTimeLabel.text          = musicMsgModel.costTimeFormat
+        slider.value                = Float( musicMsgModel.costTime / musicMsgModel.totalTime )
+        playOrPauseBtn.isSelected   = musicMsgModel.isPlaying
+    }
+    
+    @objc func updateLrc() {
+        
+        let musicMsgModel           = QQMusicOperationTool.shareInstance.getNewMessageModel()
+        
+        // 1.获取滚动号
+        let rowLrcM                 = QQLrcDataTool.getRowLrcM(currentTime: musicMsgModel.costTime, lrcMs: lrcVC.dataSource)
+        
+        // 2.交给歌词展示控制器, 来滚动
+        lrcVC.scroll                = rowLrcM.row
+        
+        // 3.给歌词标签赋值
+        let lrcM                    = rowLrcM.lrcM
+        lrcLabel.text               = lrcM.lrcStr
+        
+        // 4.给歌词标签进度赋值
+        let value                   = (musicMsgModel.costTime - lrcM.beginTime) / (lrcM.endTime - lrcM.beginTime)
+        lrcLabel.progress           = value
+        
+        // 5.给歌词列表标签赋值
+        lrcVC.progress              = value
+    }
+    
+    func addTimer() {
+        timer = Timer(timeInterval: 1, target: self, selector: #selector(setupDataTimes), userInfo: nil, repeats: true)
+        
+        RunLoop.current.add(timer!, forMode: .common)
+    }
+    
+    func removeTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func addDisplayLink() {
+        displayLink = CADisplayLink(target: self, selector: #selector(updateLrc))
+        displayLink?.add(to: RunLoop.current, forMode: .common)
+    }
+    
+    func removeDisplayLink() {
+        displayLink?.invalidate()
+        displayLink = nil
+    }
 }
