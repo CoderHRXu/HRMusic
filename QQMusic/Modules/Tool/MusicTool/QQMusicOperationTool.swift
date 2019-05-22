@@ -136,11 +136,21 @@ extension QQMusicOperationTool {
         let costTime                = musicMM.costTime
         let totalTime               = musicMM.totalTime
         
+        if musicMM.musicM?.icon != nil {
+            
+            if let image = UIImage.init(named: (musicMM.musicM?.icon!)!) {
+                artwork = MPMediaItemArtwork(image: image)
+            }
+            
+        }
+    
+        
         var infoDict:[String : Any] = [
+            // 适配iOS11以上
             // 歌曲名
-            MPMediaItemPropertyTitle: songName,
+            MPMediaItemPropertyTitle: songName + " - " + singer,
             // 歌手
-            MPMediaItemPropertyArtist: singer,
+            MPMediaItemPropertyArtist: lrcM.lrcStr.count > 0 ?  lrcM.lrcStr : " ",
             // 当前播放时间
             MPNowPlayingInfoPropertyElapsedPlaybackTime: costTime,
             // 总时长
