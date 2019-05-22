@@ -209,15 +209,15 @@ extension  MusicDetailViewController: UIGestureRecognizerDelegate{
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         
         // 1.计算比例
-        let curP = touch.location(in: slider)
-        let value = curP.x / slider.size.width
+        let curP            = touch.location(in: slider)
+        let value           = curP.x / slider.size.width
         
         // 2.算出时间
-        let totalTime = QQMusicOperationTool.shareInstance.getNewMessageModel().totalTime
-        let currentTime = totalTime * Double(value)
+        let totalTime       = QQMusicOperationTool.shareInstance.getNewMessageModel().totalTime
+        let currentTime     = totalTime * Double(value)
         
         // 3.设置当前播放进度
-        slider.value = Float(value)
+        slider.value        = Float(value)
         QQMusicOperationTool.shareInstance.tool.jumpTo(timeInterval: currentTime)
         
         return true
@@ -337,6 +337,7 @@ extension MusicDetailViewController{
         playOrPauseBtn.isSelected   = musicMsgModel.isPlaying
     }
     
+    /// 更新歌词
     @objc func updateLrc() {
         
         let musicMsgModel           = QQMusicOperationTool.shareInstance.getNewMessageModel()
@@ -357,27 +358,42 @@ extension MusicDetailViewController{
         
         // 5.给歌词列表标签赋值
         lrcVC.progress              = value
+        
+        // 6.设置锁屏信息
+        // 前台不更新, 后台更新
+        let state = UIApplication.shared.applicationState
+        // Active    前台
+        // Inactive
+        // Background 后台
+        
+        if state == .background {
+            QQMusicOperationTool.shareInstance.setupLockScreenMsg()
+        }
     }
     
+    
+    /// 添加定时器
     func addTimer() {
-        timer = Timer(timeInterval: 1, target: self, selector: #selector(setupDataTimes), userInfo: nil, repeats: true)
-        
+        timer                       = Timer(timeInterval: 1, target: self, selector: #selector(setupDataTimes), userInfo: nil, repeats: true)
         RunLoop.current.add(timer!, forMode: .common)
     }
     
+    /// 移除定时器
     func removeTimer() {
         timer?.invalidate()
-        timer = nil
+        timer                       = nil
     }
     
+    /// 添加DisplayLink定时器（频繁调用）
     func addDisplayLink() {
-        displayLink = CADisplayLink(target: self, selector: #selector(updateLrc))
+        displayLink                 = CADisplayLink(target: self, selector: #selector(updateLrc))
         displayLink?.add(to: RunLoop.current, forMode: .common)
     }
     
+    /// 移除DidsplayLink
     func removeDisplayLink() {
         displayLink?.invalidate()
-        displayLink = nil
+        displayLink                 = nil
     }
 }
 

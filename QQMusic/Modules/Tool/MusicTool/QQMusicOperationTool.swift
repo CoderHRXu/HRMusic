@@ -52,6 +52,9 @@ class QQMusicOperationTool: NSObject {
         return musicMessageModel
     }
     
+    /// 播放音乐
+    ///
+    /// - Parameter music: 音乐
     func playMusic(music: QQMusicModel) {
         
         let fileName = music.filename ?? ""
@@ -62,8 +65,7 @@ class QQMusicOperationTool: NSObject {
             return
         }
         
-        index = (musicMList?.index(of: music))!
-        
+        index = (musicMList?.firstIndex(of: music))!
     }
     
     /// 播放
@@ -87,6 +89,7 @@ class QQMusicOperationTool: NSObject {
         }
     }
     
+    /// 上一曲
     func playPreviousSong() {
         
         index -= 1
@@ -98,8 +101,64 @@ class QQMusicOperationTool: NSObject {
     }
     
     
+    /// 指定时间点播放
+    ///
+    /// - Parameter timeInterval: 时间
     func jumpTo(timeInterval: TimeInterval) {
         tool.jumpTo(timeInterval: timeInterval)
     }
 }
 
+
+extension QQMusicOperationTool {
+    
+    
+    /// 设置锁屏信息
+    func setupLockScreenMsg() {
+        
+        let musicMM                 = getNewMessageModel()
+        // 展示锁屏信息
+        
+        // 1.获取锁屏播放中心
+        let playCenter              = MPNowPlayingInfoCenter.default()
+        
+        // 当前正在播放的歌词信息
+        // 1. 根据当前的歌词文件名称, 获取所有的歌词数据模型列表
+        let lrcMs                   = QQLrcDataTool.getLrcData(fileName: (musicMM.musicM!.lrcname!))
+        
+        // 2. 根据列表, 以及当前的播放时间, 获取当前的歌词数据模型
+        let rowLrcM                 = QQLrcDataTool.getRowLrcM(currentTime: musicMM.costTime, lrcMs: lrcMs)
+        let lrcM                    = rowLrcM.lrcM
+        
+        // 1.1 创建字典
+        let songName                = musicMM.musicM?.name ?? "未知歌曲"
+        let singer                  = musicMM.musicM?.singer ?? "未知歌手"
+        let costTime                = musicMM.costTime
+        let totalTime               = musicMM.totalTime
+        
+        var infoDict:[String : Any] = [
+            // 歌曲名
+            MPMediaItemPropertyTitle: songName,
+            // 歌手
+            MPMediaItemPropertyArtist: singer,
+            // 当前播放时间
+            MPNowPlayingInfoPropertyElapsedPlaybackTime: costTime,
+            // 总时长
+            MPMediaItemPropertyPlaybackDuration: totalTime
+        ]
+        
+        if artwork != nil {
+            infoDict[MPMediaItemPropertyArtwork] = artwork!
+        }
+        
+        // 2.给锁屏中心赋值
+        playCenter.nowPlayingInfo = infoDict
+        
+        // 3.接受远程事件
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        
+        
+        
+        
+    }
+}

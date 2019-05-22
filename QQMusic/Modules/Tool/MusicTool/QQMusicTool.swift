@@ -33,7 +33,7 @@ class QQMusicTool: NSObject {
     }
     
     
-    /// 根据文件名播放k歌曲
+    /// 根据文件名播放歌曲
     ///
     /// - Parameter name: 文件名
     func playMusic(name : String) {
